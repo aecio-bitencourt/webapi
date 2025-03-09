@@ -11,5 +11,6 @@ namespace API.Interfaces
         Task<List<Codigos_Movimento>> GetCodigos_Movimento();
         Task<List<Contratos>> GetContratos();
         Task<List<Filiais>> GetFiliais();
+        Task<List<Grupo_Empresarial>> GetGrupo_Empresarial();
     }
 }

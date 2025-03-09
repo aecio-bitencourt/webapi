@@ -19,7 +19,7 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais")
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial")
                 return BadRequest();
 
             if (rota.ToLower() == "notas")
@@ -58,11 +58,17 @@ namespace API.Controllers
                 var contratosDto = contratos.Select(c => c.ToContratosDto());
                 return Ok(contratosDto);
             }
-            else
+            else if (rota.ToLower() == "filiais")
             {
                 var filiais = await _operacoesRepo.GetFiliais();
                 var filiaisDto = filiais.Select(f => f.ToFiliaisDto());
                 return Ok(filiaisDto);
+            }
+            else
+            {
+                var grupo_empresarial = await _operacoesRepo.GetGrupo_Empresarial();
+                var grupo_empresarialDto = grupo_empresarial.Select(g => g.ToGrupo_Empresarial());
+                return Ok(grupo_empresarialDto);
             }
         }
     }
