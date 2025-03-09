@@ -10,5 +10,6 @@ namespace API.Interfaces
         Task<List<Clientes>> GetClientes();
         Task<List<Codigos_Movimento>> GetCodigos_Movimento();
         Task<List<Contratos>> GetContratos();
+        Task<List<Filiais>> GetFiliais();
     }
 }

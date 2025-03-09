@@ -17,5 +17,6 @@ namespace API.Data
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Codigos_Movimento> Codigos_Movimento { get; set; }
         public DbSet<Contratos> Contratos { get; set; }
+        public DbSet<Filiais> Filiais { get; set; }
     }
 }

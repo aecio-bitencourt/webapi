@@ -19,7 +19,7 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos")
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais")
                 return BadRequest();
 
             if (rota.ToLower() == "notas")
@@ -52,11 +52,17 @@ namespace API.Controllers
                 var codigos_movimentoDto = codigos_movimento.Select(c => c.ToCodigos_MovimentoDto());
                 return Ok(codigos_movimentoDto);
             }
-            else
+            else if (rota.ToLower() == "contratos")
             {
                 var contratos = await _operacoesRepo.GetContratos();
                 var contratosDto = contratos.Select(c => c.ToContratosDto());
                 return Ok(contratosDto);
+            }
+            else
+            {
+                var filiais = await _operacoesRepo.GetFiliais();
+                var filiaisDto = filiais.Select(f => f.ToFiliaisDto());
+                return Ok(filiaisDto);
             }
         }
     }

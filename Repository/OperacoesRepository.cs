@@ -48,5 +48,12 @@ namespace API.Repository
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"contratos"}")
                 .ToListAsync();
         }
+
+        public Task<List<Filiais>> GetFiliais()
+        {
+            return _context.Filiais
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"filiais"}")
+                .ToListAsync();
+        }
     }
 }
