@@ -69,5 +69,12 @@ namespace API.Repository
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"itens_contrato"}")
                 .ToListAsync();
         }
+
+        public Task<List<Faturamento_Equipamentos>> GetFaturamento_Equipamentos()
+        {
+            return _context.Faturamento_Equipamentos
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"faturamento_eq"}")
+                .ToListAsync();
+        }
     }
 }
