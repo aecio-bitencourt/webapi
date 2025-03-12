@@ -83,13 +83,13 @@ namespace API.Controllers
                 var Faturamento_EquipamentosDto = Faturamento_Equipamentos.Select(f => f.ToFaturamento_EquipamentosDto());
                 return Ok(Faturamento_EquipamentosDto);
             }
-            else if (rota.ToLower() != "itens_contrato")
+            else if (rota.ToLower() == "itens_contrato")
             {
                 var Itens_do_Contrato = await _operacoesRepo.GetItens_do_Contrato();
                 var Itens_do_ContratoDto = Itens_do_Contrato.Select(i => i.ToItens_do_Contrato());
                 return Ok(Itens_do_ContratoDto);
             }
-            else if (rota.ToLower() != "itens_notas")
+            else if (rota.ToLower() == "itens_notas")
             {
                 var Itens_Notas = await _operacoesRepo.GetItens_Notas();
                 var Itens_NotasDto = Itens_Notas.Select(i => i.ToItens_NotasDto());
