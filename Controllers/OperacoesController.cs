@@ -1,5 +1,4 @@
-﻿using API.Dtos;
-using API.Interfaces;
+﻿using API.Interfaces;
 using API.Mappers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +19,7 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "faturamento_eq")
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "faturamento_eq" && rota.ToLower() != "fornecedores")
                 return BadRequest();
 
             if (rota.ToLower() == "notas")
@@ -77,13 +76,18 @@ namespace API.Controllers
                 var itens_do_contrato_notaDto = itens_do_contrato_nota.Select(i => i.ToItens_do_Contrato_Nota());
                 return Ok(itens_do_contrato_notaDto);
             }
-            else
+            else if(rota.ToLower() == "faturamento_eq")
             {
                 var Faturamento_Equipamentos = await _operacoesRepo.GetFaturamento_Equipamentos();
                 var Faturamento_EquipamentosDto = Faturamento_Equipamentos.Select(f => f.ToFaturamento_EquipamentosDto());
                 return Ok(Faturamento_EquipamentosDto);
             }
-
+            else
+            {
+                var fornecedores = await _operacoesRepo.GetFornecedores();
+                var fornecedoresDto = fornecedores.Select(f => f.ToFornecedoresDto());
+                return Ok(fornecedoresDto);
+            }
         }
     }
 }
