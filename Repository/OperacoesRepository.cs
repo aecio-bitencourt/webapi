@@ -84,7 +84,7 @@ namespace API.Repository
                 .ToListAsync();
         }
 
-        public Task<List<Fornecedores?>> GetFornecedores()
+        public Task<List<Fornecedores>> GetFornecedores()
         {
             return _context.Fornecedores
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"fornecedores"}")
