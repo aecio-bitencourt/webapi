@@ -14,5 +14,6 @@ namespace API.Interfaces
         Task<List<Grupo_Empresarial>> GetGrupo_Empresarial();
         Task<List<Itens_do_Contrato_Nota>> GetItens_do_Contrato_Nota();
         Task<List<Faturamento_Equipamentos>> GetFaturamento_Equipamentos();
+        Task<List<Itens_do_Contrato>> GetItens_do_Contrato();
     }
 }

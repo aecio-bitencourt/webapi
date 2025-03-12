@@ -20,7 +20,7 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "faturamento_eq")
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato")
                 return BadRequest();
 
             if (rota.ToLower() == "notas")
@@ -71,17 +71,23 @@ namespace API.Controllers
                 var grupo_empresarialDto = grupo_empresarial.Select(g => g.ToGrupo_Empresarial());
                 return Ok(grupo_empresarialDto);
             }
-            else if (rota.ToLower() == "itens_contrato")
+            else if (rota.ToLower() == "itens_contrato_nota")
             {
                 var itens_do_contrato_nota = await _operacoesRepo.GetItens_do_Contrato_Nota();
                 var itens_do_contrato_notaDto = itens_do_contrato_nota.Select(i => i.ToItens_do_Contrato_Nota());
                 return Ok(itens_do_contrato_notaDto);
             }
-            else
+            else if (rota.ToLower() == "faturamento_equipamentos")
             {
                 var Faturamento_Equipamentos = await _operacoesRepo.GetFaturamento_Equipamentos();
                 var Faturamento_EquipamentosDto = Faturamento_Equipamentos.Select(f => f.ToFaturamento_EquipamentosDto());
                 return Ok(Faturamento_EquipamentosDto);
+            }
+            else
+            {
+                var Itens_do_Contrato = await _operacoesRepo.GetItens_do_Contrato();
+                var Itens_do_ContratoDto = Itens_do_Contrato.Select(i => i.ToItens_do_Contrato());
+                return Ok(Itens_do_ContratoDto);
             }
 
         }
