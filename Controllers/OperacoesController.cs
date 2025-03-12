@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Eventing.Reader;
-using API.Dtos;
+﻿using API.Dtos;
 using API.Interfaces;
 using API.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +20,7 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "itens_notas")
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas")
                 return BadRequest();
 
             if (rota.ToLower() == "notas")
@@ -84,19 +83,25 @@ namespace API.Controllers
                 var Faturamento_EquipamentosDto = Faturamento_Equipamentos.Select(f => f.ToFaturamento_EquipamentosDto());
                 return Ok(Faturamento_EquipamentosDto);
             }
-            else if (rota.ToLower() == "itens_contrato")
+            else if (rota.ToLower() != "itens_contrato")
             {
                 var Itens_do_Contrato = await _operacoesRepo.GetItens_do_Contrato();
                 var Itens_do_ContratoDto = Itens_do_Contrato.Select(i => i.ToItens_do_Contrato());
                 return Ok(Itens_do_ContratoDto);
             }
-            else
+            else if (rota.ToLower() != "itens_notas")
             {
                 var Itens_Notas = await _operacoesRepo.GetItens_Notas();
                 var Itens_NotasDto = Itens_Notas.Select(i => i.ToItens_NotasDto());
                 return Ok(Itens_Notas);
             }
 
+            else
+            {
+                var fornecedores = await _operacoesRepo.GetFornecedores();
+                var fornecedoresDto = fornecedores.Select(f => f.ToFornecedoresDto());
+                return Ok(fornecedoresDto);
+            }
         }
     }
 }
