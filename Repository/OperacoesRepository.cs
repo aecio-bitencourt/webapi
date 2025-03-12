@@ -66,14 +66,21 @@ namespace API.Repository
         public Task<List<Itens_do_Contrato_Nota>> GetItens_do_Contrato_Nota()
         {
             return _context.Itens_do_Contrato_Nota
-                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"itens_contrato"}")
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"itens_contrato_nota"}")
                 .ToListAsync();
         }
 
         public Task<List<Faturamento_Equipamentos>> GetFaturamento_Equipamentos()
         {
             return _context.Faturamento_Equipamentos
-                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"faturamento_eq"}")
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"faturamento_equipamentos"}")
+                .ToListAsync();
+        }
+
+        public Task<List<Itens_do_Contrato>> GetItens_do_Contrato()
+        {
+            return _context.Itens_do_Contrato
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"itens_contrato"}")
                 .ToListAsync();
         }
 
