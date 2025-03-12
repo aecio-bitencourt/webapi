@@ -22,6 +22,7 @@ namespace API.Data
         public DbSet<Itens_do_Contrato_Nota> Itens_do_Contrato_Nota { get; set; }
         public DbSet<Faturamento_Equipamentos> Faturamento_Equipamentos { get; set; }
         public DbSet<Itens_do_Contrato> Itens_do_Contrato { get; set; }
+        public DbSet<Itens_Notas> Itens_Notas { get; set; }
 
     }
 }
