@@ -48,53 +48,52 @@ namespace API.Repository
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"contratos"}")
                 .ToListAsync();
         }
-
         public Task<List<Filiais>> GetFiliais()
         {
             return _context.Filiais
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"filiais"}")
                 .ToListAsync();
         }
-
         public Task<List<Grupo_Empresarial>> GetGrupo_Empresarial()
         {
             return _context.Grupo_Empresarial
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"grupo_empresarial"}")
                 .ToListAsync();
         }
-
         public Task<List<Itens_do_Contrato_Nota>> GetItens_do_Contrato_Nota()
         {
             return _context.Itens_do_Contrato_Nota
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"itens_contrato_nota"}")
                 .ToListAsync();
         }
-
         public Task<List<Faturamento_Equipamentos>> GetFaturamento_Equipamentos()
         {
             return _context.Faturamento_Equipamentos
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"faturamento_equipamentos"}")
                 .ToListAsync();
         }
-
         public Task<List<Itens_do_Contrato>> GetItens_do_Contrato()
         {
             return _context.Itens_do_Contrato
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"itens_contrato"}")
                 .ToListAsync();
         }
-
         public Task<List<Fornecedores>> GetFornecedores()
         {
             return _context.Fornecedores
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"fornecedores"}")
                 .ToListAsync();
         }
-
         public Task<List<Itens_Notas>> GetItens_Notas()
         {
             return _context.Itens_Notas
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"itens_notas"}")
+                .ToListAsync();
+        }
+        public Task<List<Leituras_Equipamentos>> GetLeituras_Equipamentos()
+        {
+            return _context.Leituras_Equipamentos
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"leituras_equipamentos"}")
                 .ToListAsync();
         }
     }

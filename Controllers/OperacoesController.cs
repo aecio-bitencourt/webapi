@@ -20,7 +20,7 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas")
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos")
                 return BadRequest();
 
             if (rota.ToLower() == "notas")
@@ -95,12 +95,17 @@ namespace API.Controllers
                 var Itens_NotasDto = Itens_Notas.Select(i => i.ToItens_NotasDto());
                 return Ok(Itens_Notas);
             }
-
-            else
+            else if(rota.ToLower() == "fornecedores")
             {
                 var fornecedores = await _operacoesRepo.GetFornecedores();
                 var fornecedoresDto = fornecedores.Select(f => f.ToFornecedoresDto());
                 return Ok(fornecedoresDto);
+            }
+            else
+            {
+                var leituras_equipamentos = await _operacoesRepo.GetLeituras_Equipamentos();
+                var leituras_equipamentosDto = leituras_equipamentos.Select(l => l.ToLeituras_EquipamentosDto());
+                return Ok(leituras_equipamentosDto);
             }
         }
     }
