@@ -21,7 +21,7 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos" && rota.ToLower() != "modelos" && rota.ToLower() != "produtos" rota.ToLower() != "requisicoes_pecas_suprimentos")
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos" && rota.ToLower() != "modelos" && rota.ToLower() != "produtos" && rota.ToLower() != "requisicoes_pecas_suprimentos")
                 return BadRequest();
 
             if (rota.ToLower() == "notas")
@@ -102,7 +102,7 @@ namespace API.Controllers
                 var fornecedoresDto = fornecedores.Select(f => f.ToFornecedoresDto());
                 return Ok(fornecedoresDto);
             }
-            else if(rota.ToLower() == "leituras_equipamentos")
+            else if (rota.ToLower() == "leituras_equipamentos")
             {
                 var leituras_equipamentos = await _operacoesRepo.GetLeituras_Equipamentos();
                 var leituras_equipamentosDto = leituras_equipamentos.Select(l => l.ToLeituras_EquipamentosDto());
@@ -121,7 +121,7 @@ namespace API.Controllers
                 return Ok(produtosDto);
             }
             else
-            {  
+             {  
                 var Requisicoes_PecasSuprimentos = await _operacoesRepo.GetRequisicoes_PecasSuprimentos();
                 var Requisicoes_PecasSuprimentosDto = Requisicoes_PecasSuprimentos.Select(r => r.ToRequisicoes_PecasSuprimentosDto());
                 return Ok(Requisicoes_PecasSuprimentosDto);
