@@ -20,5 +20,6 @@ namespace API.Interfaces
         Task<List<Leituras_Equipamentos>> GetLeituras_Equipamentos();
         Task<List<Modelos>> GetModelos();
         Task<List<Produtos>> GetProdutos();
+        Task<List<Requisicoes_PecasSuprimentos>> GetRequisicoes_PecasSuprimentos();
     }
 }
