@@ -102,5 +102,11 @@ namespace API.Repository
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"modelos"}")
                 .ToListAsync();
         }
+        public Task<List<Requisicoes_PecasSuprimentos>> GetRequisicoes_PecasSuprimentos()
+        {
+            return _context.Requisicoes_PecasSuprimentos
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"requisicoes_pecas_suprimentos"}")
+                .ToListAsync();
+        }
     }
 }
