@@ -5,7 +5,7 @@ namespace API.Mappers
 {
     public static class Grupo_EmpresarialMappers
     {
-        public static Grupo_EmpresarialDto ToGrupo_Empresarial(this Grupo_Empresarial grupo_EmpresarialModel)
+        public static Grupo_EmpresarialDto ToGrupo_EmpresarialDto(this Grupo_Empresarial grupo_EmpresarialModel)
         {
             return new Grupo_EmpresarialDto
             {

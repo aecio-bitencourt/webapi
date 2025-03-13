@@ -25,6 +25,7 @@ namespace API.Data
         public DbSet<Fornecedores> Fornecedores { get; set; }
         public DbSet<Itens_Notas> Itens_Notas { get; set; }
         public DbSet<Leituras_Equipamentos> Leituras_Equipamentos { get; set; }
+        public DbSet<Modelos> Modelos { get; set; }
         public DbSet<Produtos> Produtos { get; set; }
     }
 }

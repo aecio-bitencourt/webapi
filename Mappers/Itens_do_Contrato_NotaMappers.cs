@@ -5,7 +5,7 @@ namespace API.Mappers
 {
     public static class Itens_do_Contrato_NotaMappers
     {
-        public static Itens_do_Contrato_NotaDto ToItens_do_Contrato_Nota(this Itens_do_Contrato_Nota itens_do_Contrato_NotaModel)
+        public static Itens_do_Contrato_NotaDto ToItens_do_Contrato_NotaDto(this Itens_do_Contrato_Nota itens_do_Contrato_NotaModel)
         {
             return new Itens_do_Contrato_NotaDto
             {

@@ -20,8 +20,8 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos" && rota.ToLower() != "produtos")
-                return BadRequest("Rota inválida");
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos" && rota.ToLower() != "modelos" && rota.ToLower() != "produtos")
+                return BadRequest();
 
             if (rota.ToLower() == "notas")
             {
@@ -68,13 +68,13 @@ namespace API.Controllers
             else if (rota.ToLower() == "grupo_empresarial")
             {
                 var grupo_empresarial = await _operacoesRepo.GetGrupo_Empresarial();
-                var grupo_empresarialDto = grupo_empresarial.Select(g => g.ToGrupo_Empresarial());
+                var grupo_empresarialDto = grupo_empresarial.Select(g => g.ToGrupo_EmpresarialDto());
                 return Ok(grupo_empresarialDto);
             }
             else if (rota.ToLower() == "itens_contrato_nota")
             {
                 var itens_do_contrato_nota = await _operacoesRepo.GetItens_do_Contrato_Nota();
-                var itens_do_contrato_notaDto = itens_do_contrato_nota.Select(i => i.ToItens_do_Contrato_Nota());
+                var itens_do_contrato_notaDto = itens_do_contrato_nota.Select(i => i.ToItens_do_Contrato_NotaDto());
                 return Ok(itens_do_contrato_notaDto);
             }
             else if (rota.ToLower() == "faturamento_equipamentos")
@@ -86,7 +86,7 @@ namespace API.Controllers
             else if (rota.ToLower() == "itens_contrato")
             {
                 var Itens_do_Contrato = await _operacoesRepo.GetItens_do_Contrato();
-                var Itens_do_ContratoDto = Itens_do_Contrato.Select(i => i.ToItens_do_Contrato());
+                var Itens_do_ContratoDto = Itens_do_Contrato.Select(i => i.ToItens_do_ContratoDto());
                 return Ok(Itens_do_ContratoDto);
             }
             else if (rota.ToLower() == "itens_notas")
@@ -107,11 +107,17 @@ namespace API.Controllers
                 var leituras_equipamentosDto = leituras_equipamentos.Select(l => l.ToLeituras_EquipamentosDto());
                 return Ok(leituras_equipamentosDto);
             }
-            else
+            else if(rota.ToLower() == "produtos")
             {
                 var produtos = await _operacoesRepo.GetProdutos();
                 var produtosDto = produtos.Select(p => p.ToProdutosDto());
                 return Ok(produtosDto);
+            }
+            else
+            {
+                var modelos = await _operacoesRepo.GetModelos();
+                var modelosDto = modelos.Select(m => m.ToModelosDto());
+                return Ok(modelosDto);
             }
         }
     }
