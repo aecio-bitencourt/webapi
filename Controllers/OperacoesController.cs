@@ -21,7 +21,7 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos" && rota.ToLower() != "modelos" && rota.ToLower() != "produtos" && rota.ToLower() != "requisicoes_pecas_suprimentos" && rota.ToLower() != "saldos_estoque")
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos" && rota.ToLower() != "modelos" && rota.ToLower() != "produtos" && rota.ToLower() != "requisicoes_pecas_suprimentos" && rota.ToLower() != "saldos_estoque" && rota.ToLower() != "taxa_modelo")
                 return BadRequest();
 
             if (rota.ToLower() == "notas")
@@ -96,7 +96,7 @@ namespace API.Controllers
                 var Itens_NotasDto = Itens_Notas.Select(i => i.ToItens_NotasDto());
                 return Ok(Itens_Notas);
             }
-            else if(rota.ToLower() == "fornecedores")
+            else if (rota.ToLower() == "fornecedores")
             {
                 var fornecedores = await _operacoesRepo.GetFornecedores();
                 var fornecedoresDto = fornecedores.Select(f => f.ToFornecedoresDto());
@@ -121,16 +121,22 @@ namespace API.Controllers
                 return Ok(produtosDto);
             }
             else if (rota.ToLower() == "requisicoes_pecas_suprimentos")
-            {  
+            {
                 var Requisicoes_PecasSuprimentos = await _operacoesRepo.GetRequisicoes_PecasSuprimentos();
                 var Requisicoes_PecasSuprimentosDto = Requisicoes_PecasSuprimentos.Select(r => r.ToRequisicoes_PecasSuprimentosDto());
                 return Ok(Requisicoes_PecasSuprimentosDto);
             }
-            else
+            else if (rota.ToLower() == "saldos_estoque")
             {
                 var Saldos_Estoque = await _operacoesRepo.GetSaldos_Estoque();
                 var Saldos_EstoqueDto = Saldos_Estoque.Select(s => s.ToSaldos_EstoqueDto());
                 return Ok(Saldos_EstoqueDto);
+            }
+            else
+            {
+                var Taxa_Modelo = await _operacoesRepo.GetTaxa_Modelo();
+                var Taxa_ModeloDto = Taxa_Modelo.Select(s => s.ToTaxa_ModeloDto());
+                return Ok(Taxa_ModeloDto);
             }
         }
     }

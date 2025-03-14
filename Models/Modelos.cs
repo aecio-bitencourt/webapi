@@ -6,7 +6,7 @@ namespace API.Models
     public class Modelos
     {
         [Key]
-        [Column(TypeName = "string(50")]
+        [Column(TypeName = "string(50)")]
         public string? Nome { get; set; }
 
         [Column(TypeName = "string(3)")]
