@@ -110,6 +110,7 @@ namespace API.Repository
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"leituras_equipamentos"}")
                 .ToListAsync();
         }
+
         public Task<List<Modelos>> GetModelos()
         {
             return _context.Modelos
@@ -123,10 +124,18 @@ namespace API.Repository
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"produtos"}")
                 .ToListAsync();
         }
+
         public Task<List<Requisicoes_PecasSuprimentos>> GetRequisicoes_PecasSuprimentos()
         {
             return _context.Requisicoes_PecasSuprimentos
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"requisicoes_pecas_suprimentos"}")
+                .ToListAsync();
+        }
+
+        public Task<List<Serie_Produtos>> GetSerie_Produtos()
+        {
+            return _context.Serie_Produtos
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"serie_produtos"}")
                 .ToListAsync();
         }
     }
