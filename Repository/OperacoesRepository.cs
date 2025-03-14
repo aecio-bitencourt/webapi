@@ -166,5 +166,23 @@ namespace API.Repository
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"tipo_produtos"}")
                 .ToListAsync();
         }
+        public Task<List<Tipo_Vendedor>> GetTipo_Vendedor()
+        {
+            return _context.Tipo_Vendedor
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"tipo_vendedor"}")
+                .ToListAsync();
+        }
+        public Task<List<Titulos>> GetTitulos()
+        {
+            return _context.Titulos
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"titulos"}")
+                .ToListAsync();
+        }
+        public Task<List<Vendedores>> GetVendedores()
+        {
+            return _context.Vendedores
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"vendedores"}")
+                .ToListAsync();
+        }
     }
 }

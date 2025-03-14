@@ -21,7 +21,7 @@ namespace API.Controllers
         //Chamada utilizando Procedure
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
-            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos" && rota.ToLower() != "modelos" && rota.ToLower() != "produtos" && rota.ToLower() != "requisicoes_pecas_suprimentos" && rota.ToLower() != "saldos_estoque" && rota.ToLower() != "serie_produtos" && rota.ToLower() != "taxa_modelo" && rota.ToLower() != "tipo_clientes" && rota.ToLower() != "tipo_produtos")
+            if (rota.ToLower() != "notas" && rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "filiais" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "fornecedores" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos" && rota.ToLower() != "modelos" && rota.ToLower() != "produtos" && rota.ToLower() != "requisicoes_pecas_suprimentos" && rota.ToLower() != "saldos_estoque" && rota.ToLower() != "serie_produtos" && rota.ToLower() != "taxa_modelo" && rota.ToLower() != "tipo_clientes" && rota.ToLower() != "tipo_produtos" && rota.ToLower() != "tipo_vendedor" && rota.ToLower() != "titulos" && rota.ToLower() != "vendedores")
                 return BadRequest();
 
             if (rota.ToLower() == "notas")
@@ -150,11 +150,29 @@ namespace API.Controllers
                 var Tipo_ClientesDto = Tipo_Clientes.Select(t => t.ToTipo_ClientesDto());
                 return Ok(Tipo_ClientesDto);
             }
-            else
+            else if(rota.ToLower() == "tipo_produtos")
             {
                 var tipo_produtos = await _operacoesRepo.GetTipo_Produtos();
                 var tipo_produtosDto = tipo_produtos.Select(t => t.ToTipo_ProdutosDto());
                 return Ok(tipo_produtosDto);
+            }
+            else if (rota.ToLower() == "tipo_vendedor")
+            {
+                var Tipo_Vendedor = await _operacoesRepo.GetTipo_Vendedor();
+                var Tipo_VendedorDto = Tipo_Vendedor.Select(t => t.ToTipo_VendedorDto());
+                return Ok(Tipo_VendedorDto);
+            }
+            else if (rota.ToLower() == "titulos")
+            {
+                var Titulos = await _operacoesRepo.GetTitulos();
+                var TitulosDto = Titulos.Select(t => t.ToTitulosDto());
+                return Ok(TitulosDto);
+            }
+            else
+            {
+                var Vendedores = await _operacoesRepo.GetVendedores();
+                var VendedoresDto = Vendedores.Select(t => t.ToVendedoresDto());
+                return Ok(VendedoresDto);
             }
         }
     }

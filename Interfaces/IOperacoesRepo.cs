@@ -26,5 +26,8 @@ namespace API.Interfaces
         Task<List<Taxa_Modelo>> GetTaxa_Modelo();
         Task<List<Tipo_Clientes>> GetTipo_Clientes();
         Task<List<Tipo_Produtos>> GetTipo_Produtos();
+        Task<List<Tipo_Vendedor>> GetTipo_Vendedor();
+        Task<List<Titulos>> GetTitulos();
+        Task<List<Vendedores>> GetVendedores();
     }
 }
