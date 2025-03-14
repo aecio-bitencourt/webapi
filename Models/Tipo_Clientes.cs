@@ -1,18 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.CompilerServices;
 
 namespace API.Models
 {
-    public class Tipo_Produtos
+    public class Tipo_Clientes
     {
         [Key]
+        [Column(TypeName = "string(3)")]
         public string? Codigo { get; set; }
+
+        [Column(TypeName = "string(40)")]
         public string? Nome { get; set; }
         public float? Desconto { get; set; }
         public double? Acrescimo { get; set; }
-        public string? Fabricante { get; set; }
-        public string? Grupo { get; set; }
     }
 }
