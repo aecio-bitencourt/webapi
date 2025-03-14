@@ -24,5 +24,7 @@ namespace API.Interfaces
         Task<List<Saldos_Estoque>> GetSaldos_Estoque();
         Task<List<Serie_Produtos>> GetSerie_Produtos();
         Task<List<Taxa_Modelo>> GetTaxa_Modelo();
+        Task<List<Tipo_Clientes>> GetTipo_Clientes();
+
     }
 }
