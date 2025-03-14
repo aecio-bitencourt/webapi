@@ -132,6 +132,13 @@ namespace API.Repository
                 .ToListAsync();
         }
 
+        public Task<List<Saldos_Estoque>> GetSaldos_Estoque()
+        {
+            return _context.Saldos_Estoque
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"saldos_estoque"}")
+                .ToListAsync();
+        }
+
         public Task<List<Serie_Produtos>> GetSerie_Produtos()
         {
             return _context.Serie_Produtos

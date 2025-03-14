@@ -28,6 +28,7 @@ namespace API.Data
         public DbSet<Modelos> Modelos { get; set; }
         public DbSet<Produtos> Produtos { get; set; }
         public DbSet<Requisicoes_PecasSuprimentos> Requisicoes_PecasSuprimentos { get; set; }
+        public DbSet<Saldos_Estoque> Saldos_Estoque { get; set; }
         public DbSet<Serie_Produtos> Serie_Produtos { get; set; }
     }
 }
