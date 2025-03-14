@@ -31,5 +31,6 @@ namespace API.Data
         public DbSet<Saldos_Estoque> Saldos_Estoque { get; set; }
         public DbSet<Serie_Produtos> Serie_Produtos { get; set; }
         public DbSet<Taxa_Modelo> Taxa_Modelo { get; set; }
+        public DbSet<Tipo_Produtos> Tipo_Produtos { get; set; }
     }
 }
