@@ -34,5 +34,6 @@ namespace API.Data
         public DbSet<Tipo_Clientes> Tipo_Clientes { get; set; }
         public DbSet<Tipo_Vendedor> Tipo_Vendedor { get; set; }
         public DbSet<Titulos> Titulos { get; set; }
+        public DbSet<Vendedores> Vendedores { get; set; }
     }
 }

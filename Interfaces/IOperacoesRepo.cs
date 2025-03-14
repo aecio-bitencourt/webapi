@@ -27,6 +27,6 @@ namespace API.Interfaces
         Task<List<Tipo_Clientes>> GetTipo_Clientes();
         Task<List<Tipo_Vendedor>> GetTipo_Vendedor();
         Task<List<Titulos>> GetTitulos();
-
+        Task<List<Vendedores>> GetVendedores();
     }
 }
