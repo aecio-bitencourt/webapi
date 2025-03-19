@@ -1,11 +1,11 @@
-﻿using API.Dtos;
-using API.Interfaces;
+﻿using API.Interfaces;
 using API.Mappers;
-using API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    [Authorize]
     [Route("api/operacoes")]
     [ApiController]
     public class OperacoesController : ControllerBase

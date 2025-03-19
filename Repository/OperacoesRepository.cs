@@ -177,5 +177,9 @@ namespace API.Repository
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"vendedores"}")
                 .ToListAsync();
         }
+        public Task<List<Usuarios>> GetUsuarios()
+        {
+            return _context.Usuarios.ToListAsync();
+        }
     }
 }
