@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace API.Dtos.Saldos_Estoque
+﻿namespace API.Dtos.Saldos_Estoque
 {
     public class Saldos_EstoqueDto
     {

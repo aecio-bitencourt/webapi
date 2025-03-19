@@ -5,12 +5,12 @@ namespace API.Mappers
 {
     public static class Tipo_VendedorMappers
     {
-        public static Tipo_VendedorDto ToTipo_VendedorDto(this Tipo_Vendedor Tipo_VendedorModel)
+        public static Tipo_VendedorDto ToTipo_VendedorDto(this Tipo_Vendedor tipo_vendedorModel)
         {
             return new Tipo_VendedorDto
             {
-                Codigo = Tipo_VendedorModel.Codigo,
-                Nome = Tipo_VendedorModel.Nome,
+                Codigo = tipo_vendedorModel.Codigo,
+                Nome = tipo_vendedorModel.Nome,
             };
         }
     }

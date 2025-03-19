@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace API.Dtos.Itens_do_Contrato
+﻿namespace API.Dtos.Itens_do_Contrato
 {
     public class Itens_do_ContratoDto
     {

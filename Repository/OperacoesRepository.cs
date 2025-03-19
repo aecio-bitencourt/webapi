@@ -20,13 +20,6 @@ namespace API.Repository
                 .ToListAsync();
         }
 
-        public Task<List<Notas>> GetNotas()
-        {
-            return _context.Notas
-                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"notas"}")
-                .ToListAsync();
-        }
-
         public Task<List<Centro_de_Custo>> GetCentro_de_Custo()
         {
             return _context.Centro_de_Custo
@@ -55,10 +48,24 @@ namespace API.Repository
                 .ToListAsync();
         }
 
+        public Task<List<Faturamento_Equipamentos>> GetFaturamento_Equipamentos()
+        {
+            return _context.Faturamento_Equipamentos
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"faturamento_equipamentos"}")
+                .ToListAsync();
+        }
+
         public Task<List<Filiais>> GetFiliais()
         {
             return _context.Filiais
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"filiais"}")
+                .ToListAsync();
+        }
+
+        public Task<List<Fornecedores>> GetFornecedores()
+        {
+            return _context.Fornecedores
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"fornecedores"}")
                 .ToListAsync();
         }
 
@@ -69,20 +76,6 @@ namespace API.Repository
                 .ToListAsync();
         }
 
-        public Task<List<Itens_do_Contrato_Nota>> GetItens_do_Contrato_Nota()
-        {
-            return _context.Itens_do_Contrato_Nota
-                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"itens_contrato_nota"}")
-                .ToListAsync();
-        }
-
-        public Task<List<Faturamento_Equipamentos>> GetFaturamento_Equipamentos()
-        {
-            return _context.Faturamento_Equipamentos
-                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"faturamento_equipamentos"}")
-                .ToListAsync();
-        }
-
         public Task<List<Itens_do_Contrato>> GetItens_do_Contrato()
         {
             return _context.Itens_do_Contrato
@@ -90,10 +83,10 @@ namespace API.Repository
                 .ToListAsync();
         }
 
-        public Task<List<Fornecedores>> GetFornecedores()
+        public Task<List<Itens_do_Contrato_Nota>> GetItens_do_Contrato_Nota()
         {
-            return _context.Fornecedores
-                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"fornecedores"}")
+            return _context.Itens_do_Contrato_Nota
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"itens_contrato_nota"}")
                 .ToListAsync();
         }
 
@@ -115,6 +108,13 @@ namespace API.Repository
         {
             return _context.Modelos
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"modelos"}")
+                .ToListAsync();
+        }
+
+        public Task<List<Notas>> GetNotas()
+        {
+            return _context.Notas
+                .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"notas"}")
                 .ToListAsync();
         }
 
@@ -166,18 +166,21 @@ namespace API.Repository
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"tipo_produtos"}")
                 .ToListAsync();
         }
+
         public Task<List<Tipo_Vendedor>> GetTipo_Vendedor()
         {
             return _context.Tipo_Vendedor
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"tipo_vendedor"}")
                 .ToListAsync();
         }
+
         public Task<List<Titulos>> GetTitulos()
         {
             return _context.Titulos
                 .FromSqlInterpolated($"EXEC spGetAPIOperacoes @rota = {"titulos"}")
                 .ToListAsync();
         }
+
         public Task<List<Vendedores>> GetVendedores()
         {
             return _context.Vendedores

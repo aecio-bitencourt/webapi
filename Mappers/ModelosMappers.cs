@@ -5,14 +5,14 @@ namespace API.Mappers
 {
     public static class ModelosMappers
     {
-        public static ModelosDto ToModelosDto(this Modelos ModelosModel)
+        public static ModelosDto ToModelosDto(this Modelos modelosModel)
         {
             return new ModelosDto
             {
-                Nome = ModelosModel.Nome,
-                Codigo = ModelosModel.Codigo,
-                Inativo = ModelosModel.Inativo,
-                EstimativaAtendimento = ModelosModel.EstimativaAtendimento
+                Nome = modelosModel.Nome,
+                Codigo = modelosModel.Codigo,
+                Inativo = modelosModel.Inativo,
+                EstimativaAtendimento = modelosModel.EstimativaAtendimento
             };
         }
     }

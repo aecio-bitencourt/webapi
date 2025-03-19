@@ -5,15 +5,15 @@ namespace API.Mappers
 {
     public static class Taxa_ModeloMappers
     {
-        public static Taxa_ModeloDto ToTaxa_ModeloDto(this Taxa_Modelo Taxa_ModeloModel)
+        public static Taxa_ModeloDto ToTaxa_ModeloDto(this Taxa_Modelo taxa_modeloModel)
         {
             return new Taxa_ModeloDto
             {
-                Modelo = Taxa_ModeloModel.Modelo,
-                Dia = Taxa_ModeloModel.Dia,
-                Cotacao = Taxa_ModeloModel.Cotacao,
-                Data_Ult_Mov = Taxa_ModeloModel.Data_Ult_Mov,
-                TimeStap_w = Taxa_ModeloModel.TimeStap_w
+                Modelo = taxa_modeloModel.Modelo,
+                Dia = taxa_modeloModel.Dia,
+                Cotacao = taxa_modeloModel.Cotacao,
+                Data_Ult_Mov = taxa_modeloModel.Data_Ult_Mov,
+                TimeStap_w = taxa_modeloModel.TimeStap_w
             };
         }
     }

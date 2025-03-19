@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace API.Dtos.Titulos
+﻿namespace API.Dtos.Titulos
 {
     public class TitulosDto
     {

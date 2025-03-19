@@ -5,19 +5,19 @@ namespace API.Mappers
 {
     public static class Saldos_EstoqueMappers
     {
-        public static Saldos_EstoqueDto ToSaldos_EstoqueDto(this Saldos_Estoque Saldos_EstoqueModel)
+        public static Saldos_EstoqueDto ToSaldos_EstoqueDto(this Saldos_Estoque saldos_estoqueModel)
         {
             return new Saldos_EstoqueDto
             {
-                Produto = Saldos_EstoqueModel.Produto,
-                Almoxarifado = Saldos_EstoqueModel.Almoxarifado,
-                Filial = Saldos_EstoqueModel.Filial,
-                Saldo = Saldos_EstoqueModel.Saldo,
-                Saldo_Terceiros = Saldos_EstoqueModel.Saldo_Terceiros,
-                Custo = Saldos_EstoqueModel.Custo,
-                Empenho = Saldos_EstoqueModel.Empenho,
-                Pendente = Saldos_EstoqueModel.Pendente,
-                Data_Ult_Mov = Saldos_EstoqueModel.Data_Ult_Mov
+                Produto = saldos_estoqueModel.Produto,
+                Almoxarifado = saldos_estoqueModel.Almoxarifado,
+                Filial = saldos_estoqueModel.Filial,
+                Saldo = saldos_estoqueModel.Saldo,
+                Saldo_Terceiros = saldos_estoqueModel.Saldo_Terceiros,
+                Custo = saldos_estoqueModel.Custo,
+                Empenho = saldos_estoqueModel.Empenho,
+                Pendente = saldos_estoqueModel.Pendente,
+                Data_Ult_Mov = saldos_estoqueModel.Data_Ult_Mov
             };
         }
     }

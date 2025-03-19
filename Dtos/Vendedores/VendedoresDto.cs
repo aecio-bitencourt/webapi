@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace API.Dtos.Vendedores
+﻿namespace API.Dtos.Vendedores
 {
     public class VendedoresDto
     {

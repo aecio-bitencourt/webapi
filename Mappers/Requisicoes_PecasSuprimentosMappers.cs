@@ -5,25 +5,26 @@ namespace API.Mappers
 {
     public static class Requisicoes_PecasSuprimentosMappers
     {
-        public static Requisicoes_PecasSuprimentosDto ToRequisicoes_PecasSuprimentosDto(this Requisicoes_PecasSuprimentos Requisicoes_PecasSuprimentosModel)
+        public static Requisicoes_PecasSuprimentosDto ToRequisicoes_PecasSuprimentosDto(this Requisicoes_PecasSuprimentos requisicoes_pecasSuprimentosModel)
         {
             return new Requisicoes_PecasSuprimentosDto
             {
-                ID = Requisicoes_PecasSuprimentosModel.ID,
-                Numero_Serie = Requisicoes_PecasSuprimentosModel.Numero_Serie,
-                Equipamento = Requisicoes_PecasSuprimentosModel.Equipamento,
-                Usuario = Requisicoes_PecasSuprimentosModel.Usuario,
-                Cliente = Requisicoes_PecasSuprimentosModel.Cliente,
-                Situacao = Requisicoes_PecasSuprimentosModel.Situacao,
-                Quantidade = Requisicoes_PecasSuprimentosModel.Quantidade,
-                DataHoraAbertura = Requisicoes_PecasSuprimentosModel.DataHoraAbertura,
-                DataFaturamento = Requisicoes_PecasSuprimentosModel.DataFaturamento,
-                Pedido = Requisicoes_PecasSuprimentosModel.Pedido,
-                Nota = Requisicoes_PecasSuprimentosModel.Nota,
-                Filial = Requisicoes_PecasSuprimentosModel.Filial,
-                DataPedido = Requisicoes_PecasSuprimentosModel.DataPedido,
-                Contrato = Requisicoes_PecasSuprimentosModel.Contrato,
-                EmailContato = Requisicoes_PecasSuprimentosModel.EmailContato
+                ID = requisicoes_pecasSuprimentosModel.ID,
+                Numero_Serie = requisicoes_pecasSuprimentosModel.Numero_Serie,
+                Equipamento = requisicoes_pecasSuprimentosModel.Equipamento,
+                Suprimento = requisicoes_pecasSuprimentosModel.Suprimento,
+                Usuario = requisicoes_pecasSuprimentosModel.Usuario,
+                Cliente = requisicoes_pecasSuprimentosModel.Cliente,
+                Situacao = requisicoes_pecasSuprimentosModel.Situacao,
+                Quantidade = requisicoes_pecasSuprimentosModel.Quantidade,
+                DataHoraAbertura = requisicoes_pecasSuprimentosModel.DataHoraAbertura,
+                DataFaturamento = requisicoes_pecasSuprimentosModel.DataFaturamento,
+                Pedido = requisicoes_pecasSuprimentosModel.Pedido,
+                Nota = requisicoes_pecasSuprimentosModel.Nota,
+                Filial = requisicoes_pecasSuprimentosModel.Filial,
+                DataPedido = requisicoes_pecasSuprimentosModel.DataPedido,
+                Contrato = requisicoes_pecasSuprimentosModel.Contrato,
+                EmailContato = requisicoes_pecasSuprimentosModel.EmailContato
             };
             
         }

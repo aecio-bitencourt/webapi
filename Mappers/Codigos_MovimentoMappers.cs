@@ -1,7 +1,5 @@
-﻿using API.Dtos.Almoxarifados;
-using API.Dtos.Codigos_Movimento;
+﻿using API.Dtos.Codigos_Movimento;
 using API.Models;
-using System.Runtime.CompilerServices;
 
 namespace API.Mappers
 {

@@ -5,14 +5,14 @@ namespace API.Mappers
 {
     public static class Tipo_ClientesMappers
     {
-        public static Tipo_ClientesDto ToTipo_ClientesDto(this Tipo_Clientes Tipo_ClientesModel)
+        public static Tipo_ClientesDto ToTipo_ClientesDto(this Tipo_Clientes tipo_clientesModel)
         {
             return new Tipo_ClientesDto
             {
-                Codigo = Tipo_ClientesModel.Codigo,
-                Nome = Tipo_ClientesModel.Nome,
-                Desconto = Tipo_ClientesModel.Desconto,
-                Acrescimo = Tipo_ClientesModel.Acrescimo
+                Codigo = tipo_clientesModel.Codigo,
+                Nome = tipo_clientesModel.Nome,
+                Desconto = tipo_clientesModel.Desconto,
+                Acrescimo = tipo_clientesModel.Acrescimo
             };
         }
     }

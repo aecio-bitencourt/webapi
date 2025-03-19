@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace API.Dtos.Tipo_Vendedor
+﻿namespace API.Dtos.Tipo_Vendedor
 {
     public class Tipo_VendedorDto
     {

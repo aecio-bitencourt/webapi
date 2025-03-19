@@ -1,12 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace API.Dtos.Requisicoes_PecasSuprimentos
+﻿namespace API.Dtos.Requisicoes_PecasSuprimentos
 {
     public class Requisicoes_PecasSuprimentosDto
     {
         public required int ID { get; set; }
         public required string Numero_Serie { get; set; }
         public string? Equipamento { get; set; }
+        public string? Suprimento { get; set; }
         public int? Usuario { get; set; }
         public string? Cliente { get; set; }
         public string? Situacao { get; set; }

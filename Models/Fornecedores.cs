@@ -39,7 +39,7 @@ namespace API.Models
         public string? Codigo_Cliente { get; set; }
         //rowversion
         [Timestamp]
-        public Byte[]? TimeStamp_w { get; set; }
+        public byte[]? TimeStamp_w { get; set; }
         public string? Email { get; set; }
         public int? Inativo { get; set; }
         public string? Ult_Documento1 { get; set; }

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace API.Dtos.Modelos
+﻿namespace API.Dtos.Modelos
 {
     public class ModelosDto
     {
@@ -10,4 +8,3 @@ namespace API.Dtos.Modelos
         public double? EstimativaAtendimento { get; set; }
     }
 }
-

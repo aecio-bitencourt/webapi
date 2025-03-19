@@ -16,7 +16,6 @@ namespace API.Mappers
                 Ult_Custo = almoxarifadosModel.Ult_Custo,
                 Almoxarifado_de_Venda = almoxarifadosModel.Almoxarifado_de_Venda
             };
-
         }
     }
 }

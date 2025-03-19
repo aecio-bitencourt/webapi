@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace API.Dtos.Codigos_Movimento
+﻿namespace API.Dtos.Codigos_Movimento
 {
     public class Codigos_MovimentoDto
     {

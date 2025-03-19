@@ -5,26 +5,26 @@ namespace API.Mappers
 {
     public static class Faturamento_EquipamentosMappers
     {
-        public static Faturamento_EquipamentosDto ToFaturamento_EquipamentosDto(this Faturamento_Equipamentos Faturamento_EquipamentosModel)
+        public static Faturamento_EquipamentosDto ToFaturamento_EquipamentosDto(this Faturamento_Equipamentos faturamento_equipamentosModel)
         {
             return new Faturamento_EquipamentosDto
             {
-                Cliente = Faturamento_EquipamentosModel.Cliente,
-                Contrato = Faturamento_EquipamentosModel.Contrato,
-                Mes = Faturamento_EquipamentosModel.Mes,
-                Produto = Faturamento_EquipamentosModel.Produto,
-                NumeroSerie = Faturamento_EquipamentosModel.NumeroSerie,
-                VariacaoCambial = Faturamento_EquipamentosModel.VariacaoCambial,
-                IPMaquina = Faturamento_EquipamentosModel.IPMaquina,
-                Departamento = Faturamento_EquipamentosModel.Departamento,
-                CustoPaginaMono = Faturamento_EquipamentosModel.CustoPaginaMono,
-                CustoPaginaColor = Faturamento_EquipamentosModel.CustoPaginaColor,
-                TaxaFixa = Faturamento_EquipamentosModel.TaxaFixa,
-                ContadorAcumMono = Faturamento_EquipamentosModel.ContadorAcumMono,
-                ContadorAcumColor = Faturamento_EquipamentosModel.ContadorAcumColor,
-                PaginasMesMono = Faturamento_EquipamentosModel.PaginasMesMono,
-                PaginasMesColor = Faturamento_EquipamentosModel.PaginasMesColor,
-                ValorTotal = Faturamento_EquipamentosModel.ValorTotal
+                Cliente = faturamento_equipamentosModel.Cliente,
+                Contrato = faturamento_equipamentosModel.Contrato,
+                Mes = faturamento_equipamentosModel.Mes,
+                Produto = faturamento_equipamentosModel.Produto,
+                NumeroSerie = faturamento_equipamentosModel.NumeroSerie,
+                VariacaoCambial = faturamento_equipamentosModel.VariacaoCambial,
+                IPMaquina = faturamento_equipamentosModel.IPMaquina,
+                Departamento = faturamento_equipamentosModel.Departamento,
+                CustoPaginaMono = faturamento_equipamentosModel.CustoPaginaMono,
+                CustoPaginaColor = faturamento_equipamentosModel.CustoPaginaColor,
+                TaxaFixa = faturamento_equipamentosModel.TaxaFixa,
+                ContadorAcumMono = faturamento_equipamentosModel.ContadorAcumMono,
+                ContadorAcumColor = faturamento_equipamentosModel.ContadorAcumColor,
+                PaginasMesMono = faturamento_equipamentosModel.PaginasMesMono,
+                PaginasMesColor = faturamento_equipamentosModel.PaginasMesColor,
+                ValorTotal = faturamento_equipamentosModel.ValorTotal
             };
         }
     }

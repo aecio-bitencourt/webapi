@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace API.Dtos.Filiais
+﻿namespace API.Dtos.Filiais
 {
     public class FiliaisDto
     {

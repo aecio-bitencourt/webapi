@@ -5,21 +5,21 @@ namespace API.Mappers
 {
     public static class TitulosMappers
     {
-        public static TitulosDto ToTitulosDto(this Titulos TitulosModel)
+        public static TitulosDto ToTitulosDto(this Titulos titulosModel)
         {
             return new TitulosDto
             {
-                Codigo = TitulosModel.Codigo,
-                Sacado = TitulosModel.Sacado,
-                Tipo = TitulosModel.Tipo,
-                Valor = TitulosModel.Valor,
-                Filial = TitulosModel.Filial,
-                Vencimento = TitulosModel.Vencimento,
-                Emissao = TitulosModel.Emissao,
-                Codigo_Emissao = TitulosModel.Codigo_Emissao,
-                Vendedor = TitulosModel.Vendedor,
-                Valor_Nota = TitulosModel.Valor_Nota,
-                Nota = TitulosModel.Nota
+                Codigo = titulosModel.Codigo,
+                Sacado = titulosModel.Sacado,
+                Tipo = titulosModel.Tipo,
+                Valor = titulosModel.Valor,
+                Filial = titulosModel.Filial,
+                Vencimento = titulosModel.Vencimento,
+                Emissao = titulosModel.Emissao,
+                Codigo_Emissao = titulosModel.Codigo_Emissao,
+                Vendedor = titulosModel.Vendedor,
+                Valor_Nota = titulosModel.Valor_Nota,
+                Nota = titulosModel.Nota
             };
         }
      }
