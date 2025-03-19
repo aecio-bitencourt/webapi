@@ -83,6 +83,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseAuthentication(); // Ativa autenticação JWT
 app.UseAuthorization();
 

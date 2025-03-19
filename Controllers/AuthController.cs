@@ -31,7 +31,7 @@ public class AuthController : ControllerBase
             return Unauthorized("Usuário ou senha inválidos.");
         }
 
-        var allowedUsers = new List<string> {"admin", "Aecio"};
+        var allowedUsers = new List<string> {"otavio_ti", "Aecio"};
 
         if (!allowedUsers.Contains(user.Nome))
         {
