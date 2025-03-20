@@ -1,9 +1,11 @@
 ﻿using API.Interfaces;
 using API.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    [Authorize]
     [Route("api/operacoes")]
     [ApiController]
     public class OperacoesController : ControllerBase
@@ -16,7 +18,8 @@ namespace API.Controllers
         }
 
         [HttpGet("{rota}")]
-        //Chamada utilizando Procedure spGetAPIOperacoes
+        //Chamada utilizando Procedure
+
         public async Task<IActionResult> spGetAPIOperacoes(string rota)
         {
             if (rota.ToLower() != "almoxarifados" && rota.ToLower() != "centro_de_custo" && rota.ToLower() != "clientes" && rota.ToLower() != "codigos_movimento" && rota.ToLower() != "contratos" && rota.ToLower() != "faturamento_equipamentos" && rota.ToLower() != "filiais" && rota.ToLower() != "fornecedores" && rota.ToLower() != "grupo_empresarial" && rota.ToLower() != "itens_contrato" && rota.ToLower() != "itens_contrato_nota" && rota.ToLower() != "itens_notas" && rota.ToLower() != "leituras_equipamentos" && rota.ToLower() != "modelos" && rota.ToLower() != "notas" && rota.ToLower() != "produtos" && rota.ToLower() != "requisicoes_pecas_suprimentos" && rota.ToLower() != "saldos_estoque" && rota.ToLower() != "serie_produtos" && rota.ToLower() != "taxa_modelo" && rota.ToLower() != "tipo_clientes" && rota.ToLower() != "tipo_produtos" && rota.ToLower() != "tipo_vendedor" && rota.ToLower() != "titulos" && rota.ToLower() != "vendedores")
